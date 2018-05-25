@@ -1,0 +1,186 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Angular Material
+////////////////////////////////////////////////////////////////////////////////////////////////////
+@import '~@angular/material/theming';
+@include mat-core();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Kendo
+////////////////////////////////////////////////////////////////////////////////////////////////////
+@import '~@progress/kendo-theme-default/scss/all';
+
+@import '~ngx-toastr/toastr.css';
+
+.navigation > li ul li a.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::selection {
+  background-color: #37474f;
+  color: #ffffff;
+}
+
+.k-grid-header,
+.k-header,
+.k-grid-header-wrap,
+.k-grouping-header,
+.k-grouping-header .k-group-indicator,
+.k-grid td,
+.k-grid-footer,
+.k-grid-footer-wrap,
+.k-grid-content-locked,
+.k-grid-footer-locked,
+.k-grid-header-locked,
+.k-filter-row > td,
+.k-filter-row > th {
+  border-color: #ddd;
+}
+
+.k-grid {
+  color: #444;
+  font-family: sans-serif;
+}
+
+.k-grid-header,
+.k-grid-toolbar,
+.k-grouping-header,
+.k-grid-add-row,
+.k-grid-footer,
+.k-drag-clue {
+  color: #444;
+  background-color: #fff;
+}
+
+.k-pager-wrap {
+  color: #444;
+  background-color: #fff;
+}
+
+.k-list-container .k-nodata .k-button,
+.k-dropdown .k-dropdown-wrap,
+.k-button,
+.k-toolbar .k-split-button .k-button,
+.k-spreadsheet-filter,
+.k-pivot-toolbar .k-button,
+.k-fieldselector .k-list li.k-item,
+.k-colorpicker .k-picker-wrap,
+.k-combobox .k-select,
+.k-datepicker .k-select,
+.k-timepicker .k-select,
+.k-datetimepicker .k-select,
+.k-dateinput .k-select,
+.k-editor .k-editor-toolbar-wrap a.k-tool,
+.k-ct-popup .k-editor-toolbar a.k-tool,
+.editorToolbarWindow.k-header.k-window-content a.k-tool,
+.k-numerictextbox .k-select,
+.k-switch-handle,
+.k-handle,
+.k-gantt-views li,
+.k-scheduler-navigation .k-nav-today,
+.k-scheduler-navigation .k-nav-prev,
+.k-scheduler-navigation .k-nav-next,
+.k-scheduler-views li,
+.k-scheduler-footer li {
+  color: #444;
+}
+
+.k-widget ::selection,
+.k-block ::selection {
+  background-color: #37474f;
+}
+
+.k-widget ::selection,
+.k-block ::selection {
+  background-color: #37474f;
+  color: #ffffff;
+}
+
+.k-state-selected,
+  .k-pager-numbers .k-state-selected
+  /* .k-pager-numbers .k-link, */
+  .k-pager-numbers .k-link:link {
+  background-color: #37474f;
+}
+
+.k-pager-wrap .k-state-selected:hover {
+  background-color: #37474f;
+}
+
+.k-pager-numbers .k-link.k-state-selected,
+.k-pager-numbers .k-link:link.k-state-selected {
+  background-color: #37474f;
+}
+
+.k-list .k-item.k-state-selected,
+.k-list-optionlabel.k-state-selected,
+.k-list-container .k-button:active,
+.k-list-container .k-button.k-state-active,
+.k-spreadsheet-popup .k-button:active,
+.k-spreadsheet-popup .k-button.k-state-active,
+.k-spreadsheet-popup .k-button.k-state-selected,
+.k-menu-group .k-item.k-state-active,
+.k-menu-group .k-item.k-state-selected,
+.k-menu.k-context-menu .k-item.k-state-active,
+.k-menu.k-context-menu .k-item.k-state-selected {
+  background-color: #37474f;
+}
+
+.k-list .k-item.k-state-selected:hover,
+.k-list-optionlabel.k-state-selected:hover,
+.k-list-container .k-button:hover,
+.k-list-container .k-button.k-state-active:hover,
+.k-spreadsheet-popup .k-button:hover,
+.k-spreadsheet-popup .k-button.k-state-active:hover,
+.k-spreadsheet-popup .k-button.k-state-selected:hover,
+.k-menu-group .k-item.k-state-active:hover,
+.k-menu-group .k-item.k-state-selected:hover,
+.k-menu.k-context-menu .k-item.k-state-active:hover,
+.k-menu.k-context-menu .k-item.k-state-selected:hover {
+  background-color: #37474f;
+}
+
+.k-pager-numbers .k-link,
+.k-pager-numbers .k-link:link {
+  color: #444;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 4px;
+}
+
+.mat-elevation-z8 {
+  padding: 20px 20px;
+}
+
+.mat-form-field {
+  display: inherit !important;
+}
+
+
+.full-width {
+  width: 100%;
+  padding: 10px 20px 0px 20px;
+}

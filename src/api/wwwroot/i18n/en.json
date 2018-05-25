@@ -1,0 +1,86 @@
+{
+  "dashboard": {
+    "lang": "Eng",
+    "english": "English",
+    "french": "French",
+    "russian": "Russian",
+    "uzbek": "Uzbek",
+    "back": "Back",
+    "create": "Create",
+    "update": "Update",
+    "delete": "Delete",
+    "user_manage": "User Manage",
+    "create_user": "Create new User",
+    "users": "Users",
+    "roles": "Roles",
+    "create_permission": "Create a permission",
+    "permissions": "Permissions",
+    "regions": "Regions",
+    "region": {
+      "create": "Create new region",
+      "choose": "Choose region",
+      "preview": "Preview",
+      "population": "Population",
+      "views": "Views",
+      "code": "Code",
+      "name": "Name"
+    },
+    "countries": "Countries",
+    "country": {
+      "create": "Create new country",
+      "update": "Update the country",
+      "choose": "Choose country",
+      "code": "Code",
+      "name": "Name"
+    },
+    "cities": "Cities",
+    "city": {
+      "create": "Create new city",
+      "choose": "Choose city",
+      "preview": "Preview",
+      "population": "Population",
+      "ranking": "Ranking",
+      "name": "Name",
+      "code": "Code"
+    },
+    "languages": "Languages",
+    "language": {
+      "create": "Create new language",
+      "choose": "Choose language"
+    },
+    "culture": "Localization",
+    "manuals": "Manuals",
+    "manual": {
+      "create": "Create new manual",
+      "choose": "Choose manual"
+    },
+    "announcement": "Announcements",
+    "articleCategories": "Article Categories",
+    "acticleCategory": {
+      "create": "Create new article category",
+      "choose": "Choose article category"
+    },
+    "articles": "Articles",
+    "article": {
+      "create": "Create new article",
+      "choose": "Choose article"
+    },
+    "newsCategories": "News Categories",
+    "newsCategory": {
+      "create": "Create new news category",
+      "choose": "Choose news category"
+    },
+    "newses": "News",
+    "news": {
+      "create": "Create news",
+      "choose": "Choose news"
+    }
+  },
+  "errors": {
+    "The input was not valid.": "The input was not valid.",
+    "The Email field is required.": "The Email field is required.",
+    "The Email field is not a valid e-mail address.": "The Email field is not a valid e-mail address.",
+    "The field Email must be a string with a maximum length of 100.": "The field Email must be a string with a maximum length of 100.",
+    "The field Phone must be a string with a maximum length of 100.": "The field Phone must be a string with a maximum length of 100."
+  }
+}

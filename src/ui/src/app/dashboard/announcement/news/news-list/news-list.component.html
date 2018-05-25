@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-header>
+      <mat-card-title>
+          <h2>{{'dashboard.newses'|translate}}</h2>
+      </mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <div class="example-container mat-elevation-z8">
+          <kendo-grid 
+              [data]="gridData" 
+              [pageSize]="state.take" 
+              [skip]="state.skip" 
+              [sort]="state.sort" 
+              [sortable]="true" 
+              [pageable]="true"
+              [scrollable]="true" 
+              [filterable]="true"
+              (dataStateChange)="dataStateChange($event)" 
+              [height]="410">
+              <ng-template kendoGridToolbarTemplate>
+                  <button routerLink="add" class="k-button">{{'dashboard.news.create'|translate}}</button>
+              </ng-template>
+              <kendo-grid-column field="name" title="Name" width="250">
+              </kendo-grid-column>              
+              <!-- <kendo-grid-column field="preview" title="Preview" width="250">
+              </kendo-grid-column>
+              <kendo-grid-column field="description" title="Description" width="250">
+              </kendo-grid-column> -->
+              <kendo-grid-column field="source" title="Source" width="150">
+              </kendo-grid-column>              
+              <kendo-grid-column field="views" title="Veiws" width="150">
+              </kendo-grid-column>
+              <kendo-grid-column field="ranking" title="Ranking" width="150">
+              </kendo-grid-column>
+              <kendo-grid-column field="likes" title="Likes" width="200">
+              </kendo-grid-column>
+              <kendo-grid-column width="200">
+                  <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                      <button class="k-button" routerLink="update/{{dataItem.id}}">Update</button>                      
+                      <button class="k-button primary" (click)="delete(dataItem)">Delete</button>
+                      <button class="k-button" routerLink="display/{{dataItem.id}}">Display</button>
+                  </ng-template>
+              </kendo-grid-column>
+          </kendo-grid>
+      </div>
+  </mat-card-content>
+</mat-card>

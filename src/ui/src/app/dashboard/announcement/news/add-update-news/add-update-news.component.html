@@ -1,0 +1,94 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{this.isNew ? 'Add News' : 'Update News'}}</h2>
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content> 
+    <div class="box-container">
+      <form (ngSubmit)="addOrUpdate()" #newsForm="ngForm">
+        <div class="form-group">
+          <div class="full-width">
+            <input class="form-input" type="file" ng2FileSelect [uploader]="uploader" />
+          </div>
+          <!-- <mat-form-field class="full-width">
+            <input matInput type="number" min="0" id="views" name="views" placeholder="Views" [(ngModel)]="entity.views">
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="number" min="0" id="ranking" name="ranking" placeholder="Ranking" [(ngModel)]="entity.ranking">
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="number" min="0" id="likes" name="likes" placeholder="Likes" [(ngModel)]="entity.likes">
+            <mat-error>This field is required</mat-error>
+          </mat-form-field> -->
+          <mat-form-field class="full-width">
+            <mat-select placeholder="{{'dashboard.newsCategory.choose'|translate}}" [(ngModel)]="entity.categoryId" name="category">
+              <mat-option *ngFor="let newsCategory of newsCategories" [value]="newsCategory.value">
+                {{newsCategory.text}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-select placeholder="{{'dashboard.region.choose'|translate}}" [(ngModel)]="entity.regionId" name="region">
+              <mat-option *ngFor="let region of regions" [value]="region.value" (click)="regionChange(region)">
+                {{region.text}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-select placeholder="{{'dashboard.city.choose'|translate}}" [(ngModel)]="entity.cityId" name="city">
+              <mat-option *ngFor="let city of cities" [value]="city.value">
+                {{city.text}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="tabbable">
+            <ul class="nav nav-tabs nav-tabs-highlight nav-justified">
+              <li class="{{i == 0 ? 'active' : ''}}" *ngFor="let culture of cultures | async; let i = index">
+                <a href="#highlighted-justified-tab_{{i}}" data-toggle="tab" aria-expanded="true">{{culture.name}}</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="{{i == 0 ? 'tab-pane active' : 'tab-pane'}}" id="highlighted-justified-tab_{{i}}" *ngFor="let culture of cultures | async; let i = index">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <input matInput id="name{{i}}" name="name{{i}}" placeholder="Name" [(ngModel)]="entity.localizations[i].name">
+                    <mat-error>This field is required</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput id="preview{{i}}" name="preview{{i}}" placeholder="Preview" [(ngModel)]="entity.localizations[i].preview">
+                    <mat-error>This field is required</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field class="full-width">
+                    <input matInput id="source{{i}}" name="source{{i}}" placeholder="Source" [(ngModel)]="entity.localizations[i].source">
+                    <mat-error>This field is required</mat-error>
+                  </mat-form-field>
+                  <div id="summernote_{{i}}">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!newsForm.valid">
+            {{isNew ? 'Create News' : 'Update News'}}
+          </button>
+          <a routerLink="{{isNew ? '../' : '../../'}}" mat-raised-button color="success">Back</a>
+          <span matTooltip="Preview">
+            <button type="button" mat-raised-button color="accent" (click)="openDalog()">
+              <i class="icon-eye2" style="font-size:1.3em"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

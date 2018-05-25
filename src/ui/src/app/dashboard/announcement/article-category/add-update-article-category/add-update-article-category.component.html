@@ -1,0 +1,36 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>
+			<h2>{{this.isNew ? 'Add Article Category' : 'Update Article Category'}}</h2>
+		</mat-card-title>
+		<mat-card-subtitle></mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content>
+		<div class="box-container">
+			<form (ngSubmit)="addOrUpdate()" #articleCategoryForm="ngForm">
+				<div class="form-group">
+					<mat-tab-group class="demo-tab-group">
+						<mat-tab label="{{culture.name}}" *ngFor="let culture of cultures | async; let i = index">
+							<div class="form-group">
+								<mat-form-field class="full-width">
+									<input matInput id="name{{i}}" name="name{{i}}" placeholder="Name" [(ngModel)]="entity.localizations[i].name">
+									<mat-error>This field is required</mat-error>
+								</mat-form-field>
+							</div>
+						</mat-tab>
+					</mat-tab-group>
+					<mat-form-field class="full-width">
+						<input matInput id="code" name="code" required placeholder="Code" [(ngModel)]="entity.code">
+						<mat-error>This field is required</mat-error>
+					</mat-form-field>
+				</div>
+				<div class="form-group">
+					<button mat-raised-button color="primary" type="submit" [disabled]="!articleCategoryForm.valid">
+						{{isNew ? 'Create Article Category' : 'Update Article Category'}}
+					</button>
+					<a routerLink="{{isNew ? '../' : '../../'}}" mat-raised-button color="success">Back</a>
+				</div>
+			</form>
+		</div>
+	</mat-card-content>
+</mat-card>

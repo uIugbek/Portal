@@ -1,0 +1,41 @@
+{
+  "dashboard": {
+    "lang": "Rus",
+    "english": "Английский",
+    "french": "Французский",
+    "russian": "Русский",
+    "uzbek": "Узбекский",
+    "create": "Добавить",
+    "update": "Редактировать",
+    "delete": "Удалить",
+    "back": "Назад",
+    "user_manage": "Управление пользователями",
+    "users": "Пользователи",
+    "create_user": "Добавить пользовател",
+    "roles": "Роли",
+    "permissions": "Разрешений",
+    "create_permission": "Добавить новое разрешение",
+    "culture": "Локализация",
+    "regions": "Области",
+    "region": {
+      "create": "Добавить область",
+      "preview": "Предварительный просмотр"
+    },
+    "countries": "Страны",
+    "country": {
+      "create": "Добавить страну",
+      "choose": "Выберите страну"
+    },
+    "cities": "Города",
+    "city": {
+      "create": "Добавить город",
+      "choose": "Выберите город"
+    }
+  },
+  "errors": {
+    "The input was not valid.": "Ввод недействителен",
+    "The Email field is required.": "The Email field is required.",
+    "The Email field is not a valid e-mail address.": "The Email field is not a valid e-mail address.",
+    "The field Email must be a string with a maximum length of 100.": "Поле Email должно быть строкой с максимальной длиной 100."
+  }
+}

@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{isNew ? 'Add Role' : 'Update Role'}}</h2>
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mat-elevation-z1 box-container">
+      <form (ngSubmit)="addOrUpdate()" #roleForm="ngForm">
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput id="name" name="name" required placeholder="Name" [(ngModel)]="entity.name">
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput id="code" name="code" required placeholder="Code" [(ngModel)]="entity.code">
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput id="description" name="description" required placeholder="Description" [(ngModel)]="entity.description">
+            <mat-error>This field is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select 
+              id="permission" 
+              name="permission" 
+              placeholder="Permissions" 
+              [(ngModel)]="entity.permissions" 
+              multiple>
+              <mat-select-trigger>
+                {{entity.permissions ? entity.permissions[0] : ''}}
+                <span *ngIf="entity.permissions?.length > 1" class="example-additional-selection">
+                  (+{{entity.permissions.length - 1}} others)
+                </span>
+              </mat-select-trigger>
+              <mat-option *ngFor="let permission of permissions" [value]="permission">{{permission}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!roleForm.valid">
+            {{isNew ? 'Create Role' : 'Update Role'}}
+          </button>
+          <a routerLink="{{isNew ? '../' : '../../'}}" mat-raised-button color="success">Back</a>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

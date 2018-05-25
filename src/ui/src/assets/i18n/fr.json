@@ -1,0 +1,35 @@
+{
+  "dashboard": {
+    "lang": "Fr",
+    "english": "Anglais",
+    "french": "Français",
+    "russian": "Russe",
+    "uzbek": "Ouzbek",
+    "back": "Retourner",
+    "create": "Créer",
+    "update": "éditer",
+    "delete": "effacer",
+    "user_manage": "Utilisateur Gérer",
+    "create_user": "Créer un nouvel utilisateur",
+    "users": "Utilisateurs",
+    "roles": "Les rôles",
+    "permissions": "Autorisations",
+    "create_permission": "Créer une nouvelle autorisation",
+    "culture": "Localisation",
+    "regions": "Les régions",
+    "region": {
+      "create": "Créer une nouvelle région",
+      "preview": "Aperçu"
+    },
+    "countries": "Des pays",
+    "country": {
+      "create": "Créer un nouveau pays",
+      "choose": "Choisissez un pays"
+    },
+    "cities": "Des Villes",
+    "city": {
+      "create": "Créer un nouveau ville",
+      "choose": "Choisissez un ville"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{this.isNew ? 'Add Language' : 'Update Language'}}</h2>
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mat-elevation-z8 box-container">
+      <form (ngSubmit)="addOrUpdate()" #languageForm="ngForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="file">Choose Icon</label>
+              <div class="btn btn-primary btn-xs btn-file">
+                <i class="icon-file-plus"></i>
+                <span class="hidden-xs">Browse</span>
+                <input type="file" class="file-input" id="avatar" (change)="onFileChange($event)">
+              </div>
+            </div>
+            <div class="form-group">
+              <mat-form-field>
+                <input matInput id="code" name="code" required placeholder="Code" [(ngModel)]="entity.code">
+                <mat-error>This field is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-tab-group>
+                <mat-tab label="{{culture.name}}" *ngFor="let culture of cultures | async; let i = index">
+                  <mat-form-field>
+                    <input matInput id="name{{i}}" name="name{{i}}" required placeholder="Name" [(ngModel)]="entity.localizations[i].name">
+                    <mat-error>This field is required</mat-error>
+                  </mat-form-field>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!languageForm.valid">
+              {{isNew ? 'Create Language' : 'Update Language'}}
+            </button>
+            <a routerLink="{{isNew ? '../' : '../../'}}" mat-raised-button color="success">Back</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

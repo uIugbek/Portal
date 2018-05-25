@@ -1,0 +1,64 @@
+<div class="panel panel-flat border-top-slate-800 border-top-xlg">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      {{this.isNew ? translate.instant('dashboard.region.create') : translate.instant('dashboard.region.update')}}
+    </h3>
+    <div class="heading-elements">
+      <ul class="icons-list">
+        <li>
+          <a routerLink="/dashboard/country" data-action="close"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="box-container">
+      <form (ngSubmit)="addOrUpdate()" #regionForm="ngForm">
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <input matInput #code maxlength="5" id="code" name="code" mask="AAAAA" required placeholder="{{'dashboard.region.code'|translate}}"
+              [(ngModel)]="entity.code">
+            <mat-error>This field is required</mat-error>
+            <mat-hint align="end">{{code.value?.length || 0}}/5</mat-hint>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input matInput type="number" id="population" name="population" placeholder="{{'dashboard.region.population'|translate}}"
+              [(ngModel)]="entity.population">
+          </mat-form-field>
+          <div class="tabbable">
+            <ul class="nav nav-tabs nav-tabs-highlight nav-justified">
+              <li class="{{i == 0 ? 'active' : ''}}" *ngFor="let culture of cultures | async; let i = index">
+                <a href="#highlighted-justified-tab_{{i}}" data-toggle="tab" aria-expanded="true">{{culture.name}}</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="{{i == 0 ? 'tab-pane active' : 'tab-pane'}}" id="highlighted-justified-tab_{{i}}" *ngFor="let culture of cultures | async; let i = index">
+                <div class="form-group">
+                  <mat-form-field class="full-width">
+                    <input matInput #name id="name{{i}}" name="name{{i}}" required placeholder="{{'dashboard.region.name'|translate}}" [(ngModel)]="entity.localizations[i].name">
+                    <mat-error>This field is required</mat-error>
+                    <mat-hint align="end">{{name.value?.length || 0}}/50</mat-hint>
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <textarea matInput #preview id="preview{{i}}" name="preview{{i}}" required placeholder="{{'dashboard.region.preview'|translate}}"
+                      [(ngModel)]="entity.localizations[i].preview"></textarea>
+                    <mat-error>This field is required</mat-error>
+                    <mat-hint align="end">{{preview.value?.length || 0}}/500</mat-hint>
+                  </mat-form-field>
+                  <div id="summernote_{{i}}"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!regionForm.valid">
+            {{this.isNew ? translate.instant('dashboard.region.create') : translate.instant('dashboard.region.update')}}
+          </button>
+          <a (click)="goBack()" mat-raised-button color="success"> {{'dashboard.back'|translate}} </a>
+        </div>
+      </form>
+    </div>
+  </div>

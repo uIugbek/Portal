@@ -1,0 +1,104 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{this.isNew ? 'Add User' : 'Update User'}}</h2>
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mat-elevation-z8 box-container">
+      <form (ngSubmit)="addOrUpdate()" #userForm="ngForm">
+        <div class="row">
+          <div class="col-md-4">
+            <!--Card-->
+            <div class="card testimonial-card">
+
+              <!--Bacground color-->
+              <div class="card-up indigo lighten-1">
+              </div>
+
+              <!--Avatar-->
+              <div class="avatar" style="padding:30px">
+                <img src="{{entity.photo}}" class="img-fluid rounded-circle z-depth-2">
+              </div>
+
+              <div class="card-body">
+                <!--Name-->
+                <h4 class="card-title text-center">{{entity.firstName}} {{entity.lastName}}</h4>
+                <hr>
+              </div>
+
+            </div>
+            <!--/.Card-->
+            <div tabindex="500" class="btn btn-primary btn-xs btn-file pull-right">
+              <i class="icon-file-plus"></i>
+              <span class="hidden-xs">Browse</span>
+              <input type="file" class="file-input" id="avatar" (change)="onFileChange($event)">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="full-width">
+              <input matInput id="firstName" name="firstName" placeholder="First name" [(ngModel)]="entity.firstName">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput id="lastName" name="lastName" placeholder="Last name" [(ngModel)]="entity.lastName">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput id="middleName" name="middleName" placeholder="Middle name" [(ngModel)]="entity.middleName">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput id="userName" name="userName" required placeholder="Login" [(ngModel)]="entity.userName">
+              <mat-error>This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput id="email" name="email" required placeholder="Email" [(ngModel)]="entity.email">
+              <mat-error>This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-select placeholder="{{ 'dashboard.user.ages ' | translate }}" [(ngModel)]="entity.age" name="age">
+                <mat-option *ngFor="let age of ages" [value]="age.value">
+                  {{age.text}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-select placeholder="{{ 'dashboard.user.countries ' | translate }}" [(ngModel)]="entity.countryId" name="country">
+                <mat-option *ngFor="let country of countries" [value]="country.value">
+                  {{country.text}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-select id="roles" name="roles" placeholder="Roles" [(ngModel)]="entity.roles" multiple>
+                <mat-select-trigger>
+                  {{entity.roles ? entity.roles[0] : ''}}
+                  <span *ngIf="entity.roles?.length > 1" class="example-additional-selection">
+                    (+{{entity.roles.length - 1}} others)
+                  </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="full-width">
+              <input matInput id="comment" name="comment" placeholder="Comment" [(ngModel)]="entity.comment">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput id="postalAddress" name="postalAddress" placeholder="PostalAddress" [(ngModel)]="entity.postalAddress">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput id="zip" name="zip" placeholder="ZIP" [(ngModel)]="entity.zIP" type="number">
+            </mat-form-field>
+          </div>
+          <div class="col-md-12" style="margin-top:15px">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">
+              {{isNew ? 'Create User' : 'Update User'}}
+            </button>
+            <a routerLink="{{isNew ? '../' : '../../'}}" mat-raised-button color="success">Back</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

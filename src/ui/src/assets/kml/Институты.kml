@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Институты</name>
+    
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+	<Folder>
+	<Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>../img/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>../img/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+		<Placemark>
+      <name>Management Development Institute of Singapore in Tashkent</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2031946,41.2694119,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Tashkent temiryo'l Muhandislari Instituti]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2820141,41.2772136,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Filial Mgu Im. Lomonosova</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2806760999999,41.300206,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Tashkent Institute of Design, Construction & Maintenance of Automotive Roads]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2791092,41.3016374,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Westminster International University in Tashkent</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2833793,41.3069797,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Tashkent University of Information Technologies</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2867291,41.3409302,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Inha University in Tashkent</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.33453,41.338525,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Turin Polytechnic University</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2210609,41.3506708,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>National University of Uzbekistan</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2051911999999,41.3510834,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Yunusabadskiy Professional'nyy Kolledzh Komp'yuternykh Tekhnologiy (Pkkt Kh. Z. Kalanovo)]]></name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          69.2732261,41.3811097,0
+        </coordinates>
+      </Point>
+    </Placemark>
+	</Folder>
+  </Document>
+</kml>

@@ -1,0 +1,49 @@
+<div class="panel panel-flat border-top-slate-800 border-top-xlg">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      {{this.isNew ? translate.instant('dashboard.country.create') : translate.instant('dashboard.country.update')}}
+    </h3>
+    <div class="heading-elements">
+      <ul class="icons-list">
+        <li>
+          <a data-action="reload"></a>
+        </li>
+        <li>
+          <a routerLink="{{isNew ? '../' : '../../'}}" data-action="close"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="box-container">
+      <form (ngSubmit)="addOrUpdate()" #countryForm="ngForm">
+        <div class="form-group">
+          <mat-form-field class="full-width">
+            <input matInput id="code" #code name="code" maxlength="5" placeholder="Code" [(ngModel)]="entity.code">
+            <mat-error>This field is required</mat-error>
+            <mat-hint align="end">{{code.value?.length || 0}}/5</mat-hint>
+          </mat-form-field>
+
+          <mat-tab-group class="demo-tab-group">
+            <mat-tab label="{{culture.name}}" *ngFor="let culture of cultures | async; let i = index">
+              <div class="form-group">
+                <mat-form-field class="full-width">
+                  <input matInput #name maxlength="250" id="name{{i}}" name="name{{i}}" required placeholder="Name" [(ngModel)]="entity.localizations[i].name">
+                  <mat-error>This field is required</mat-error>
+                  <mat-hint align="end">{{name.value?.length || 0}}/250</mat-hint>
+                </mat-form-field>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+        <div class="form-group">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!countryForm.valid">
+            {{this.isNew ? translate.instant('dashboard.country.create') : translate.instant('dashboard.country.update')}}
+          </button>
+          <a routerLink="{{isNew ? '../' : '../../'}}" mat-raised-button color="success"> {{'dashboard.back'|translate}} </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

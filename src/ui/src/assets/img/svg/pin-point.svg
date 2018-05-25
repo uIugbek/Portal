@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 50 50" width="50px" height="50px" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <title>pin-point</title>
+ <g display="inline" class="currentLayer">
+  <title>Layer 1</title>
+  <g id="icomoon-ignore"/>
+  <path stroke-width="6" stroke="#ffffff" id="svg_1" d="m843.544,361.408c0,183.105 -332.861,620.933 -331.544,621.755s-331.544,-438.649 -331.544,-621.755c0,-183.104 148.439,-331.544 331.544,-331.544s331.544,148.433 331.544,331.544zm-331.544,-139.948c-77.052,0 -139.523,62.462 -139.523,139.519s62.471,139.519 139.523,139.519c77.056,0 139.522,-62.462 139.522,-139.519s-62.466,-139.519 -139.522,-139.519z"/>
+  <path class="selected" id="svg_2" d="m375.6,363c0,-77.90055 61.30939,-141 137,-141c75.69061,0 137,63.09945 137,141c0,77.90055 -61.30939,141 -137,141c-75.69061,0 -137,-63.09945 -137,-141z" fill-rule="nonzero" stroke-width="6" stroke="#ffffff" fill="#ffffff"/>
+  <rect fill="none" height="1024" width="1024" id="backgroundrect"/>
+ </g>
+</svg>

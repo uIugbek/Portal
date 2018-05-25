@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h2>{{'dashboard.countries'|translate}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="example-container mat-elevation-z8">
+            <kendo-grid
+                [data]="gridData"
+                [pageSize]="state.take"
+                [skip]="state.skip"
+                [sort]="state.sort"
+                [sortable]="true"
+                [pageable]="true"
+                [scrollable]="true"
+                [filterable]="true"
+                (dataStateChange)="dataStateChange($event)"
+                [height]="550">
+                <ng-template kendoGridToolbarTemplate>
+                    <button routerLink="add" class="k-button">{{'dashboard.country.create'|translate}}</button>
+                </ng-template>
+                <kendo-grid-column field="name" title="Name" width="250">
+                </kendo-grid-column>
+                <kendo-grid-column field="code" title="Code" width="250">
+                </kendo-grid-column>
+                <kendo-grid-column width="200">
+                    <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                        <button class="k-button" routerLink="update/{{dataItem.id}}">Update</button>
+                        <button class="k-button primary" (click)="delete(dataItem)">Delete</button>
+                    </ng-template>
+                </kendo-grid-column>
+                <div *kendoGridDetailTemplate="let dataItem">
+                  <app-region-list [country]="dataItem"></app-region-list>
+              </div>
+            </kendo-grid>
+        </div>
+    </mat-card-content>
+</mat-card>

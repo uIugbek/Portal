@@ -1,0 +1,24 @@
+<kendo-grid [data]="gridData" [pageSize]="state.take" [skip]="state.skip" [sort]="state.sort" [sortable]="true" [pageable]="true"
+  [scrollable]="true" [filterable]="true" (dataStateChange)="dataStateChange($event)">
+  <ng-template kendoGridToolbarTemplate>
+    <button routerLink="/dashboard/city/add/{{region.id}}" class="k-button">{{'dashboard.city.create'|translate}}</button>
+  </ng-template>
+  <kendo-grid-column field="name" title="Name" width="250">
+  </kendo-grid-column>
+  <kendo-grid-column field="preview" title="Preview" width="250">
+  </kendo-grid-column>
+  <kendo-grid-column field="population" title="Population" width="200">
+  </kendo-grid-column>
+  <kendo-grid-column field="views" title="Veiws" width="200">
+  </kendo-grid-column>
+  <kendo-grid-column field="ranking" title="Ranking" width="200">
+  </kendo-grid-column>
+  <kendo-grid-column field="likes" title="Likes" width="200">
+  </kendo-grid-column>
+  <kendo-grid-column width="200">
+    <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <button class="k-button" routerLink="/dashboard/city/update/{{dataItem.id}}">Update</button>
+      <button class="k-button primary" (click)="delete(dataItem)">Delete</button>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>

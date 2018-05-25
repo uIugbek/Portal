@@ -1,0 +1,35 @@
+{
+  "dashboard": {
+    "lang": "O'zb",
+    "english": "Ingliz",
+    "french": "Fransuz",
+    "russian": "Rus",
+    "uzbek": "O'zbek",
+    "create": "Yaratish",
+    "update": "O'zgartirish",
+    "delete": "O'chirish",
+    "back": "Orqaga",
+    "user_manage": "Foydalanuvchilar boshqaruvi",
+    "create_user": "Foydalanuvchi qo'shish",
+    "users": "Foydalanuvchilar",
+    "roles": "Rollar",
+    "permissions": "Ijozatlar",
+    "create_permission": "Ijozat qo'shish",
+    "culture": "Sayt tillari",
+    "regions": "Viloyatlar",
+    "region": {
+      "create": "Viloyat qo'shish",
+      "preview": "Qisqacha"
+    },
+    "countries": "Mamlakatlar",
+    "country": {
+      "create": "Mamlakat qo'shish",
+      "choose": "Mamlakatni tanlash"
+    },
+    "cities": "Shaharlar",
+    "city": {
+      "create": "Shahar qo'shish",
+      "choose": "Shaharni tanlash"
+    }
+  }
+}

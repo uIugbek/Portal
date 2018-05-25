@@ -1,0 +1,9 @@
+**/bin
+**/.vs
+**/obj
+**/.vscode
+**/node_modules
+**/.xporj.user
+**/PublishProfiles
+**/Migrations
+**/.git
